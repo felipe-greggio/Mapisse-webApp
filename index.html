@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapisse</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mapisse</h1>
+        <div class="input-group">
+            <input type="text" id="cityInput" placeholder="Enter city name (e.g., Paris)">
+            <button onclick="searchCity()">Search</button>
+            <button onclick="downloadMap()">Download</button>
+            <button onclick="zoomIn()" style="margin-left: 10px;">+</button>
+            <button onclick="zoomOut()">-</button>
+        </div>
+        <div class="map-wrapper"> <!-- New wrapper for black frame -->
+            <div id="map" style="height: 800px; width: 100%;"></div>
+            <div id="map-footer" class="map-footer"></div> <!-- Footer overlay for city name and coordinates -->
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
