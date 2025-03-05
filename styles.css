@@ -1,0 +1,118 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+#cityInput {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.map-wrapper {
+    position: relative;
+    border: 5px solid #000; /* Thick outer black frame, sharp-edged */
+    background: #fff; /* White background to separate the frames */
+    overflow: hidden; /* Ensure frame doesn’t overflow */
+}
+
+
+#map {
+    height: 800px;
+    width: 100%;
+}
+
+/* Updated fading white overlay at the bottom */
+#map-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Adjust height to match reference image, can be tweaked */
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0.2) 100%); /* Very white at bottom, light fade at top */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    color: #000;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    z-index: 1000; /* Ensure it’s above the map */
+}
+
+#map-footer .city-name {
+    font-size: 36px; /* Large, bold city name */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#map-footer .city-coordinates {
+    font-size: 18px; /* Smaller coordinates */
+    margin-bottom: 50px;
+}
+
+/* Optional: Make the map responsive for smaller screens */
+@media (max-width: 768px) {
+    #map, .map-wrapper {
+        height: 500px;
+    }
+    #map-footer {
+        height: 100px; /* Reduce footer height on mobile */
+    }
+    #map-footer .city-name {
+        font-size: 24px;
+    }
+    #map-footer .city-coordinates {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #cityInput {
+        width: 200px;
+    }
+    #map, .map-wrapper {
+        height: 400px;
+    }
+    #map-footer {
+        height: 80px;
+    }
+    #map-footer .city-name {
+        font-size: 18px;
+    }
+    #map-footer .city-coordinates {
+        font-size: 12px;
+    }
+    button {
+        padding: 8px 15px;
+    }
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    z-index: 1000;
+}
